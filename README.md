@@ -7,12 +7,12 @@ Gone is the stress you feel every time that you pick classes out for your next s
 
 Key features:
 
-Secure login over HTTPS
-Search bar/dropdown menu to find classes
-Ability to view recent and dated posts
-Ability for a user to save posts to find quicker later
-Posts are stored persistently or archived
-Ability for students to create posts about classes
-Ability for admin to create and delete posts
+1. Secure login over HTTPS
+2. Search bar/dropdown menu to find classes
+3. Ability to view recent and dated posts
+4. Ability for a user to save posts to find quicker later
+5. Posts are stored persistently or archived
+6. Ability for students to create posts about classes
+7. Ability for admin to create and delete posts
 
 ![PXL_20230127_042415782](https://user-images.githubusercontent.com/66696151/215009378-1c9ce2a6-6e93-44c0-9fe6-9cc14f556e9b.jpg)
