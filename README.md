@@ -7,7 +7,7 @@ Gone is the stress you feel every time that you pick classes out for your next s
 
 Key features:
 
-1. Secure login over HTTPS
+1. Secure login/signup over HTTPS
 2. Search bar/dropdown menu to find classes
 3. Ability to view recent and dated posts
 4. Ability for a user to save posts to find quicker later
