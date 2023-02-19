@@ -71,6 +71,10 @@ footer a {
   margin-bottom:2em;
 }
 
+#index-main {
+  margin-bottom:6em;
+}
+
 @media (max-height: 600px) {
   header {
     display: none;
