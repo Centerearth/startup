@@ -16,6 +16,8 @@ Gone is the stress you feel every time that you pick classes out for your next s
 
 Getting the file folders to be in the right place to deploy was an interesting process, still not sure if I have it exactly but everything is showing up fine now. Learned about deployment, about live share, about svg, and about html line breaks
 
+I am a big fan of Bootstrap.
+
 Key features:
 
 1. Secure login/signup over HTTPS
