@@ -86,3 +86,9 @@ footer a {
     flex: 1 100vh;
   }
 }
+
+@media (max-width: 570px) {
+  .navbar-pic {
+    display: none;
+  }
+}
