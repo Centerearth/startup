@@ -8,6 +8,7 @@ https://ratemyclass260.link
 http://3.17.19.135
 
 ./deployFiles.sh -k ~/Desktop/production.pem -h ratemyclass260.link -s simon
+
 ./deployFiles.sh -k ~/Desktop/production.pem -h ratemyclass260.link -s startup
 
 ssh -i ~/Desktop/production.pem ubuntu@3.17.19.135
