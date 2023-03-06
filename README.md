@@ -61,13 +61,17 @@ servers can talk to other servers. service are just programs in the servers
 Console Commands
 cd -change directory mdkir make directory touch create files and modify metadata cp copy files mv move and rename files rm delete files or directories curl download files found at specific URLs grep search for fragments of text inside larger bodies of text less cat view file's contents awk tr sed manipulate and transform streams of text cd path/to/directory ommitting the slash means the path is relative to your current directory cd .. move back up one directory ls list the stuff in the directory ls -l list in more detail ls -al list all files in more detail even the hidden ones --help get info on command man get info on command mkdir newDirectory rmdir directory rmdir -rf remove directory and everything in it touch fileName mv current/file/path new/file/path cp current/path new/path * is a wildcard character tldr.sh explains a lot of commands wc counts # of words, lines, chars, or bytes of whatever is inputted
 
+
 GitHub
 directory -> staged -> .git git add puts on stage, git commit puts in into the repository, git checkout moves to a previous commit. Think about Github as like another person on a computer. It's just a server somewhere that holds git and takes your commits and passes them back out. git push - pushes a commit to a clone of your repository (usually to GitHub). git pull - pulls the newest commits down.
 
+
 When you create a repository you don't want git to be bugging you about putting things in the commit or something. Anything you put in the gitignore file won't be put in the repo.
+
 
 The internet
 IP addresses are the the addresses of servers. IP addresses are how computers find each other. We don't usually use the string of numbers and so we just use like google.com. Computers we use are clients bc they are not directly connected to the internet. They use an ISP (internet service provider). When info is transfered on the internet it's transferred in packages that are reassembled at arrival. IP addresses also apply to things indirectly connected to the internet. Anywhere two or more parts of the internet intersect, there is a router. Routers direct our packets of info around. When you send something, the info is wrapped in layers of all the IP addresses it passes through (routers have IP addresses). Info can go back to where it came from by looking at the IPs it's wrapped in and retracing its steps.
+
 
 TCP/IP layers
 Application- user functionality, web (http), mail, files, remote shell, chat.
@@ -77,11 +81,15 @@ Link- physical connections and hardware
 Web Servers
 Monolithic web servers- http software on a hardware server, olden days, these are outdated now we have dynamic functionality with allows us to generate HTML on demand in reponse to users
 
+
 Web and application service can be combined ig
+
 
 Web service gateways- they run on the common http port 443. Since multiple web services can be run on the same computing device, different ports are used so a unique connection can be made to each. The gateway or reverse proxy basically listens on 443 and directs the user to the proper port.
 
+
 Microservice- web service that provides a single functional purpose. Since functionality is partitioned it can be managed independently from other stuff in a large system. They are also good at handling large differences in user volume by just running more instances of the service.
+
 
 Domain Names
 Sometimes there are multiple IP addresses associated with one domain name. This is in case one address fails to make a valid connection. Domain name- text string listed in a database called domain name registry
@@ -98,6 +106,7 @@ TTL (time to live)- different caching layers will honor the TTL and clear cache 
 you can pay to lease an unused domain name.
 Caddy
 web service gateway that listens for incoming Http requests. Caddy then serves up the files or routes the request to another web service. The ability to route requests is called a gateway or reverse proxy and allows you to exponse multiple web services as a single external web service.
+
 
 handles creation and rotation of web certificates which allows us to easily support https
 serves up all our static html, css, and javascript files,
@@ -124,10 +133,12 @@ L.E. makes http request and if successful they give the certificate to the owner
 HTML (Hypertext Markup Language)
 foundational content structure all web apps build on. Originally a format for web docs or pages. Now a page represents a single page application (SPA) or a large group of hyperlinked pages that form a multipage application (MPA).
 
+
 text is valid HTML
 always include <!DOCTYPE html> at the top of the HTML file. This tells the browser the type and version of the document
 Elements and tags
 Elements are represented with enclosing tags.
+
 
 tag- a delimited textual name we use to designate the start and end of an HTML element as it appears in an HTML document.
 tags are delimited with < and >
@@ -140,19 +151,24 @@ main- main content excluding headers, footers, navigation helps, etc.
 Attributes
 attributes describe specific details of the element. ex. the id attribute gives a unique ID to the element so you can distinguish it from other elements.
 
+
 class attribute- designates element as beeing classified into a named group of elements. -written in the element tag with aname followed by an optional value. <p id="hello" class="greeting">Hello world</p>
 Common Input attributes
 name name of imput. submitted as the name of the input if used in a form, can be used to reference the element in javascript disabled disables the ability for the user to interact with the input value the initial value of the input required signifies that a value is required in order to be valid for associates label with a control element placeholder - used to make a phantom value in an input box
 
+
 Hyperlinks
 -represented with an anchor a element that has an attribute containing the address of the hyperlink reference.
+
 
 ex. <a href="https://byu.edu">Go to the Y</a>
 Common elements
 html page container head header information title title of page meta metadata for the page such as character set or viewport settings script JavaScript reference. include external content reference body entire content body of page header header of main content footer footer of main content nav navigational inputs main main content of page section a section of the main content aside aside content from the main content div a block division of content span an inline span of content h<1-9> text heading. From h1, the highest level, down to h9, the lowest level p a paragraph of text b bring attention table table tr table row th table header td table data ol, ul ordered or unordered list li list item a anchor the text to a hyperlink img graphical image reference dialog interactive componenet such as a confirmation form a collection of user input input user input field audio audio content video video content svg scalable vector graphic content iframe inline fram of another HTML page
 
+
 Comments
 <!-- commented text --> this will be ignored when the browser renders the doc
+
 
 Special Characters
 if you want to use special characters you need to escape them using entity syntax. & - &amp; < - &lt;
@@ -160,25 +176,30 @@ if you want to use special characters you need to escape them using entity synta
 HTML Versions
 Year Version Features 1990 HTML1 format tags 1995 HTML2 tables, internationalization 1997 HTML3 MathML, CSS, frame tags 1999 HTML4 external CSS 2014 HTML5 email, password, media, and semantic tags
 
+
 Rendering HTML
 You can save any HTML file to your disk and then open the file in your browser or you can open it in VScode and use the Live Server extension to display html.
 HTML Structure
 HTML Input Elements
 form input container and submission fieldset labeled input grouping input multiple types of user input select selection dropdown ex. <select id="select" name="varSelect"> <option selected>option1</option> <option>option2</option> <option>option3</option> optgroup grouped selection dropdown option selection option textarea multiline text input label individual input label output output of input meter display value with a known range
 
+  
 form used to be necessary but since Javascript, it has lost much of its usefulness.
 To set the type of Input:
 use the type attribute text - single line textual value password - obscured password email - email address tel - telephone number url - url address number - numerical value checkbox - inclusive selection radio - exclusive selection range - range limited number date - year, month, day datetime-local - date and time month - year, month week - week of year color - color file - local file submit - button to trigger form submission
 HTML Media elements
 img, audio, and video are just references to external files. svg and canvas internal media elements that contain code for rendering a visual image that can even be animated
 
+  
 media tags that reference external media all take URL as an attribute. you can put the url as a relative path or a full path. Make the path as relative as possible so that if you change your code it doesn't affect the url. img - specify the src attribute with the url to the source image. specify an alt attribite to describe the image for accessibility. audio - uses src, include controls if you want the user to be able to control the audio playback (it makes a visual representation of the audio) autoplay starts the audio as soon as the audio file is loaded loop keeps playing it over and over video - uses src, controls, and autoplay, you may need to include crossorigin="anonymous" if you are requesting files from a different domain than the one serving your content svg - scalable vector graphics, allows you to render graphics inline in your HTML. Lots of attributes yeah canvas - facilitates 2D drawing and animation, requires javascript to work
 SVG Path Code
 M = moveto L = lineto H = horizontal lineto V = vertical lineto C = curveto S = smooth curveto Q = quadratic Bézier curve T = smooth quadratic Bézier curveto A = elliptical Arc Z = closepath
 
+  
 CSS (Cascading Style Sheets)
 animate, display custom fonts, respond to user actions, alter layout of page dynamically based off of device being used Functionality of CSS
 
+  
 defining rulesets or rules
 a rule is comprised of a selector that selects elements to apply the rule to, as well as a declaration or two or however many that represent the property to style with the given property value. consider this rule: EX. selectorp{ propertycolor: green;green is the value line is the declaration } Ex. p { color: green; } The following rule: Ex. p { font-family: sans-serif; font-size: 2em; color: navy; text-shadow: 3px 3px 1px #cccccc; } selector p selects all paragraph elements in the doc. The 4 declarations then change font, increase size, change text color, create a shadow.
 Associate CSS w/ HTML
@@ -188,6 +209,7 @@ use the link element to create a hyperlink reference to an external file contain
 The box model
 CSS defines everything as a box. Styles apply to everything in the box. Inner to Outer.
 
+  
 the element's content (text)
 the padding (stuff like background color)
 border (color, thickness, line style)
@@ -195,6 +217,7 @@ margin (considered external to the styling of the box and so represents whitespa
 Selectors
 the selector will determine which elements are affected by the rule. * is a wildcard selector that selects all elements. You can be more specific with selectors by using descendant combinators. For instance, saying section h2 { color: #004400; } would only apply the color to h2 elements who were within or "descended from" section elements.
 
+  
 Combinators
 Descendant - anything within; div p (selects all p elements within div elements)
 Child - one level within; div > p (selects all p elements that )
@@ -203,25 +226,32 @@ Adjacent Sibling - div + p (selects p that is immediately following a div and ha
 Class Selectors
 any element can have 0 or more classifications to use the classification in a rule do .classnamehere { stuff to implement } you can also combine element with class ex. p.summary{ stuff } this changes all p items of summary class.
 
+  
 ID Selector
 prefix id with # ex. #idhere { stuff } changes the element with that id.
 
+  
 Attribute Selector
 support wildcards ex. p[class='summary'] { color: red; } this changes all p elements with the class attribute of summary a[href] selects every a element with the href attribute
 
+  
 Psuedo Selector
 section:hover { blah blah } changes the section only when mouse is hovering over it.
 
+  
 CSS Fonts
 font-family property defines what fonts should be used. The value represents an ordered list of fonts of which the first one will be used by default.
 
+  
 4 major font families: serif, san-serif, fixed, and symbol. serif is a small stroke attached to ends of a characters major strokes. san-serif is without the serif. fixed means all characters the same size. symbol is non-language characters. @font-face{ font-family: 'blah blah'; src: url('blahblah'); } This lets the browser load a font you give the source for so that your app looks the same on every device. You can either host font files on your server or load from a font provider like google fonts.
 CSS Animation
 use animation properties and define keyframes for what the element should look like at different times in the animation first put animation-name: namehere animation-duration: #s; in the element you want animated Then in the CSS doc put @keyframes namehere{ from{ initial state of animation } 83 { this section is optional, but you can add sections between from and to which happen at the percentage through the animation of the number you enter. This happenn 83% of the way through the animation. } to{ final state of animation } } CSS will figure out how to get from state to state.
 
+  
 Responsive Design
 -the ability to reconfigure the interface based off of the device running the webiste
 
+  
 Design
 display in CSS will allow you to change how an HTML element is displayed by the browser. Common values
 none don't display element.
@@ -232,42 +262,55 @@ grid display elements children in a grid orientation.
 Viewport
 to make it good on phone and desktop. include a meta tag in the head element of all your HTML pages. This tells the browser not to scale the page. <meta name="viewport" content="width=device-width,initial-scale=1" />
 
+  
 Float
 float moves an element to the left or right of its container element and allows inline elements to wrap around it.
 
+  
 Media Queries
 @media dynamically detects the size and orientation of the device and applies CSS rules to represent the structure of the HTML in a way that accomodates the change.
+  
 
 tells us which side of the viewport is the longest. @media (orientation: portrait) { div { transform: rotate(270deg); } } will rotate the screen 270degrees when the app is in portrait mode @media (orientation: portrait) { aside { display: none; } } will not display asides when the viewport is in portrait mode
 Grid
 grid is useful when you want to display a group of child elements in a responsive grid ex. .container { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); grid-auto-rows: 300px; grid-gap: 1em; } grid-template-colums lets us layout the columns here we repeatedly define each column to autofill the width of the parent with children that are resized to a min of 300px and a max of 1fr whic is a fractional unit of grid width or equal to the parent element split into equal parts for the children figure out the other ig.
+  
 
 Flexbox
 -useful when you want to partition your app into areas that responsively move around as the window resizes or the orientation changes.
+  
 
 children inside of a flex display are given the flex property which tells the browser what proportion of the available space each child will get. flex-direction can take on 4 values. default is row (left to right), then row-reverse (right to left) then column and column-reverse. These represent the main axis of ordering the flex children.
 Design Layout
 text-align: center can center your text horizontally line-height: (insert 1/2height of element) will center the text vertically align-items: center aligns items along the cross axis of the flex container; centers them justify-content: center aligns items along the main axis of the flex container; centers them.
 
+  
 Debugging CSS
 use browser developer tools.
 
+  
 CSS Frameworks
 lots of code for repeatable layouts
 
+  
 Tailwind
 Bootstrap - the most popular and successful and has come to define what the layout of a webpage should be. Integrate by referencing the CSS files from their content delivery network (CDN)
 CSS Position
 using position: value; "static": This is the default value, and it means that the element is positioned according to the normal flow of the page.
 
+  
 "relative": This value positions the element relative to its normal position, without affecting the position of other elements on the page. IF you don't set "top, right, left, or bottom" the element will retain its normal position. Good to use with a child that has absolute position.
 
+  
 "absolute": This value positions the element relative to its closest POSITIONED ancestor (i.e., an ancestor with a position value other than "static"), or the containing block if there is no positioned ancestor. ( useful bc they are removed from the normal flow and can overlap other elements.)
 
+  
 "fixed": This value positions the element relative to the browser window, so it remains in the same position even if the page is scrolled.
 
+  
 Each of these values can be further adjusted with additional properties such as top, right, bottom, and left to specify the exact position of the element on the page.
 
+  
 CSS Functions
 Returning Functions
 The "min()" function in CSS returns the smaller of two or more comma-separated values.
@@ -289,29 +332,37 @@ width: 100% - sets the width equal to the width of the parent element
 CSS Units and Definitions
 80vmin - 80 percent of the viewport's smaller dimension px - pixels vh - viewport height vw -viewport width em - the font size of the parent element rem - the font size of the root element. root element - the highest level element in the document, usually the <html> tag content box - the element; default size of element; padding - the next out, clears an area around the content. The padding is transparent; default 0 border- the edge; default 0 margin- empty space between elements if you add it; default 0 fr - only availabe in display: grid; means fraction of available space. 1fr means all of the available space. You can also combine them in rations so 1fr and 2fr would split the space into three parts and give 1 part to an element and 2 parts to another
 
+  
 Bootstrap stuff
 container-fluid - the container will span the entire width of the viewport.
 container - has a fixed left and right margin
 Javascript
 include directly in the HTML file or use a separate file and the src parameter in HTML <script> element. declare variable with let or const Null The type of a variable that has not been assigned a value. Undefined The type of a variable that has not been defined. Boolean true or false. Number A 64 bit signed number. BigInt A number of arbitrary magnitude. String A textual sequence of characters. Symbol A unique value. Objects in JavaScript Object A collection of properties represented by name value pairs. Values can be of any type. {a:3, b:'fish'} Function An object that has the ability to be called. function a() {} Date Calendar dates and times. new Date('1995-12-17') Array An ordered sequence of any type. [3, 'fish'] Map A collection of key value pairs that support efficient lookups. new Map() JSON A lightweight data-interchange format used to share information across programs. {"a":3, "b":"fish"} === is the equality variable in this language (does not do type conversion) == does type conversion and can do unexpected things strings can do concatenation and equality condition ? value if true : value if false (the ternary operator - ?) same comparison for and an or as C++
 
+  
 Function
 parameters can have default values Anonymous functions - functions assigned to a variable. these are very weird. const add = function (a, b) { return a + b; }; Then you can call add as if it was the function name You can pass functions to other functions as parameters basically you can do anything to a function you can do to a variable and I don't like that at all Inner functions - functions can be declared within other functions. YUCK. Arrow functions - (optional parameters) => return statement (use brackets if you have more than one statment of executing code in your arrow function)
 
+  
 Loops
 same for, while, do while new loops: for in const obj = { a: 1, b: 'fish' }; for (const name in obj) { console.log(name); } note that for arrays the obj. name will output an index. for of The for of statement iterates over an iterable's (Array, Map, Set, ...) property values.
 
+  
 const arr = ['a', 'b']; for (const val of arr) { console.log(val); } // OUTPUT: 'a' // OUTPUT: 'b'
 
+  
 Array Functions
 push Add an item to the end of the array a.push(4) pop Remove an item from the end of the array x = a.pop slice Return a sub-array a.slice(1,-1) sort Run a function sort an array in place a.sort((a,b) => b-a) values Creates an iterator for use with a for of loop for (i of a.values()) {...} find Find the first item satisfied by a test function a.find(i => i < 2) forEach Run a function on each array item a.forEach(console.log) reduce Run a function to reduce each array item to a single item a.reduce((a, c) => a + c) map Run a function to map an array to a new array a.map(i => i+i) filter Run a function to remove items a.filter(i => i%2) every Run a function to test if all items match a.every(i => i < 3) some Run a function to test if any items match a.some(i => 1 < 1)
+
 
 Functions
 console.log() - outputs string to console console.functionName() - does something with the developer console (not the screen) console.time() console.timeEnd() - wrap your code with these two functions to see how long it takes console.count() - to see how many times a block of code is called. function join(a, b) { return a + ' ' + b; } That is for writing your own functions end lines with ; onclick attribute in HTML is followed by a value that specificies what Javacode to call. When the some() method is called, it iterates through each element in the numbers array, and for each element, it calls the callback function with that element as the argument. Array.from(iterable object like a string) - turns it into an array; Math.floor() rounds a number down to the nearest int Math.random() generates a random number setTimeout(() => function to be executed after time, time to delay)
 
+  
 Objects and Classes and Inheritance
 Function Meaning .entries Returns an array of key value pairs .keys Returns an array of keys .values Returns an array of values You can assign random properties to the object function Person(name) { return { name: name, log: function () { console.log('My name is ' + this.name); }, }; }
 
+  
 const p = new Person('Eich'); p.log(); // OUTPUT: My name is Eich
 
 class Person { constructor(name) { this.name = name; }
