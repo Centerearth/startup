@@ -1101,13 +1101,3 @@ When you use the querySelectorAll method, it returns a NodeList containing all t
 However, a NodeList is not exactly the same as an array. It does not have all the same methods as an array, such as map, reduce, or filter. It also does not have all the same properties, such as length. For example, if you try to access the length property of a NodeList, you will get a number, but it may not be the same as the actual number of elements in the list.
 
 That being said, many of the methods that work on arrays can also be used on NodeLists by converting them to arrays using the Array.from method or the spread operator (...). For example, you can convert a NodeList to an array like this:
-### Export data to URL from page
-    const currentPlant = plants[plantIndex];
-    const PlantString = JSON.stringify(currentPlant);
-    const encodedPlant = encodeURIComponent(PlantString);
-    window.location.href = 'garden.html?plant=${encodedPlant}';
-## Startup Queries
-- can I turn my addplant image into buttons so the mouse changes over them?
-- what is the importance of index.html?
-- how to center in the grid boxes?
-- add more plants to website.
