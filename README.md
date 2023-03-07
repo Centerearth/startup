@@ -1101,3 +1101,6 @@ When you use the querySelectorAll method, it returns a NodeList containing all t
 However, a NodeList is not exactly the same as an array. It does not have all the same methods as an array, such as map, reduce, or filter. It also does not have all the same properties, such as length. For example, if you try to access the length property of a NodeList, you will get a number, but it may not be the same as the actual number of elements in the list.
 
 That being said, many of the methods that work on arrays can also be used on NodeLists by converting them to arrays using the Array.from method or the spread operator (...). For example, you can convert a NodeList to an array like this:
+
+
+Simon Javascript was fun! I learned about localstorage and setting localstorage which was cool.
