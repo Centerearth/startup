@@ -1,18 +1,16 @@
 const accountName = document.querySelector('.user-name');
-accountName.textContent = this.getPlayerName();
+accountName.textContent = this.getAccountName();
 
 const reviewerName = document.querySelector('.user-name2');
-playerNameEl.textContent = this.getPlayerName();
+reviewerName.textContent = this.getAccountName();
 
-const playerNameEl = document.querySelector('.user-name');
-playerNameEl.textContent = this.getPlayerName();
+const reviewEl = document.querySelector('#reviewText');
+reviewEl.textContent = this.getReview();
 
-const playerNameEl = document.querySelector('.user-name');
-playerNameEl.textContent = this.getPlayerName();
+const gradeEl = document.querySelector('#reviewerGrade');
+gradeEl.textContent = this.getGrade();
 
-
-
-function getPlayerName() {
+function getAccountName() {
   return localStorage.getItem('userName') ?? 'Anonymous';
 }
 
@@ -20,10 +18,10 @@ function getGrade() {
     return localStorage.getItem('grade') ?? 'Unknown';
   }
 
-  function getClass() {
+function getClass() {
     return localStorage.getItem('class') ?? 'Unknown';
   }
 
-  function getReview() {
+function getReview() {
     return localStorage.getItem('review') ?? 'Unknown';
   }

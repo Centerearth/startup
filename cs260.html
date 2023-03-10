@@ -32,7 +32,10 @@
             <a class="nav-link" href="login.html">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="login.html">Account</a>
+            <a class="nav-link disabled" href="login.html">Account:  <span class="user-name"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="review_maker.html">Post A Review</a>
           </li>
         </menu>
         <!-- <img class="navbar-pic" src="Y.png" width="48" height="31" alt=""> -->
@@ -63,6 +66,24 @@
           </div>
         </div>
       </div>
+
+      
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card" style="width: 50rem;">
+            <div class="card-header" class="user-name"> <!-- setting this to two for now -->
+              <span class="user-name2">Andrew Nicholls</span>
+            </div>
+            <div class="card-body">
+                <p id="reviewText">CS 260 is so fun! Professor Jensen is super helpful and a cool guy, and the TA's (especially Rebekah Daniels) are really fast at grading. Make sure to keep working on your website throughout the class so you are not overwhelmed right before the deadline!</p>
+                <div class="card-footer text-muted">
+                  <footer class="footer" id="reviewerGrade">Grade: A</footer>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--
       <div class="row">
         <div class="col-sm-6">
           <div class="card" style="width: 50rem;">
@@ -93,21 +114,7 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="card" style="width: 50rem;">
-            <div class="card-header">
-              Andrew Nicholls
-            </div>
-            <div class="card-body">
-                <p>CS 260 is so fun! Professor Jensen is super helpful and a cool guy, and the TA's (especially Rebekah Daniels) are really fast at grading. Make sure to keep working on your website throughout the class so you are not overwhelmed right before the deadline!</p>
-                <div class="card-footer text-muted">
-                  <footer class="footer">Grade: A</footer>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      -->
     </main>
 
     <footer class="bg-dark text-dark text-muted">
@@ -120,5 +127,6 @@
         >
       </div>
     </footer>
+    <script src="cs260.js"></script>
   </body>
 </html>

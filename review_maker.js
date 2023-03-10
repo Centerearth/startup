@@ -1,5 +1,5 @@
 function post() {
-    const gradeEL = document.querySelector("#gradeId");
+    const gradeEl = document.querySelector("#gradeId");
     localStorage.setItem("grade", gradeEl.value);
 
     const classEl = document.querySelector("#classId");

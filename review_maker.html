@@ -35,17 +35,20 @@
         <li class="nav-item">
           <a class="nav-link disabled" href="login.html">Account:  <span class="user-name"></span></a> <!-- Redirects to login page for now -->
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="review_maker.html">Post A Review</a>
+        </li>
       </menu>
       <img class="navbar-pic" src="Y.png" width="48" height="31" alt="">
     </nav>
   </header>
 
-  <main class="container-fluid bg-white text-center">
+  <main class="container-fluid bg-white text-left">
     <div class="col-lg-12 col-xl-11">
-    <form>
+    <form id="reviewForm">
         <div class="form-group">
-          <label for="exampleFormControlSelect1">Please Select Your Grade</label>
-          <select class="form-control" id="exampleFormControlSelect1">
+          <label for="gradeId">Please Select Your Grade</label>
+          <select class="form-control" id="gradeId">
             <option>A</option>
             <option>A-</option>
             <option>B+</option>
@@ -60,9 +63,10 @@
             <option>F</option>
           </select>
         </div>
+        <hr/>
         <div class="form-group">
-          <label for="exampleFormControlSelect2">Please Select the Class</label>
-          <select multiple class="form-control" id="exampleFormControlSelect2">
+          <label for="classId">Please Select the Class</label>
+          <select multiple class="form-control" id="classId">
             <option>CS 260 (this is the only one that works currently) </option>
             <option>CS 111</option>
             <option>CS 110</option>
@@ -70,10 +74,13 @@
             <option>CS 236</option>
           </select>
         </div>
+        <hr/>
         <div class="form-group">
-          <label for="exampleFormControlTextarea1">Leave Your Review Here</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <label for="reviewId">Leave Your Review Here</label>
+          <textarea class="form-control" id="reviewId" rows="4"></textarea>
         </div>
+        <hr/>
+        <button type="button" class="btn btn-primary btn-block mb-4" onclick="post()">Submit</button>
       </form>
     </div>
   </main>
@@ -84,7 +91,7 @@
       <a class="text-reset" href="https://github.com/Centerearth/startup">Source</a>
     </div>
   </footer>
-  <script src="index.js"></script>
+  <script src="review_maker.js"></script>
 </body>
 
 </html>

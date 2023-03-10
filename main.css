@@ -87,7 +87,7 @@ footer a {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 800px) {
   .navbar-pic {
     display: none;
   }

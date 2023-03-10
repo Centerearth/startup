@@ -6,10 +6,9 @@ function login() {
   }
   
 
-const playerNameEl = document.querySelector('.user-name');
-playerNameEl.textContent = this.getPlayerName();
-document.getElementById("myForm").reset();
+const accountName = document.querySelector('.user-name');
+accountName.textContent = this.getAccountName();
 
-function getPlayerName() {
+function getAccountName() {
   return localStorage.getItem('userName') ?? 'Anonymous';
 }
