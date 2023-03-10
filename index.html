@@ -47,10 +47,18 @@
     <div id="index-main">
       <h1>Welcome!</h1>
       <p>Search for a class below</p>
+      <select class="custom-select custom-select-lg mb-3" id="classSelection">
+        <option selected>Class List</option>
+        <option value="cs260.html">CS 260 (This is the only link that works currently)</option>
+        <option value="cs235.html">CS 235</option>
+        <option value="cs111.html">CS 111</option>
+      </select>
+      <button type="button" class="btn btn-primary btn-block" onclick="goto()">GO</button>
+      <!--
       <div class="form-outline">
         <input type="search" id="form1" class="form-control" placeholder="Class name" aria-label="Search" />
       </div>
-    <!--
+    
       <a class="dropdown-toggle hidden-arrow btn btn-primary" href="#" id="navbarDropdownMenuLink" role="button"
         data-mdb-toggle="dropdown" aria-expanded="true">
         Class Dropdown

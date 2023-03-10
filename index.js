@@ -8,24 +8,7 @@ function getAccountName() {
   return localStorage.getItem('userName') ?? 'Anonymous';
 }
 
-searchInputDropdown.addEventListener('input', () => {
-  const filter = searchInputDropdown.value.toLowerCase();
-  showOptions();
-  const valueExist = !!filter.length;
-
-  if (valueExist) {
-    dropdownOptions.forEach((el) => {
-      const elText = el.textContent.trim().toLowerCase();
-      const isIncluded = elText.includes(filter);
-      if (!isIncluded) {
-        el.style.display = 'none';
-      }
-    });
+function goto() {
+    const link = document.querySelector("#classSelection");
+    location.href = link.value;
   }
-});
-
-const showOptions = () => {
-  dropdownOptions.forEach((el) => {
-    el.style.display = 'flex';
-  })
-} 
