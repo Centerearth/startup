@@ -32,7 +32,8 @@
             <a class="nav-link active" href="login.html">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="login.html">Account</a>
+            
+            <a class="nav-link disabled" href="login.html">Account:  <span class="user-name"></span></a>
           </li>
         </menu>
         <img class="navbar-pic" src="Y.png" width="48" height="31" alt=""> 
@@ -48,7 +49,7 @@
           <!-- Email input -->
           <div class="form-outline mb-4">
             <input type="email" id="form2Example1" class="form-control" />
-            <label class="form-label" for="form2Example1">Email address</label>
+            <label class="form-label" for="form2Example1">Email address (for now just input your name and skip the password form)</label>
           </div>
         
           <!-- Password input -->
@@ -58,7 +59,7 @@
           </div>
         
           <!-- Submit button -->
-          <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
+          <button type="button" class="btn btn-primary btn-block mb-4" onclick="login()">Sign in</button>
         
           <!-- Register buttons -->
           <div class="text-center">
@@ -78,5 +79,6 @@
         >
       </div>
     </footer>
+    <script src="login.js"></script>
   </body>
 </html>
