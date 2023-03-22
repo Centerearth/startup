@@ -22,6 +22,8 @@ Getting the file folders to be in the right place to deploy was an interesting p
 
 I am a big fan of Bootstrap.
 
+Simon Service Notes: I'm starting to grasp how everything is going to work together, although learning so many technologies at once makes the technicalities of how exactly to code everything a little difficult to fully understand. I'm getting there though. The other day the BYU website was having problems and displayed a huge JSON object and I was proud of myself for recognizing it as using a web service and trying to display the JSON object it was querying. I also learned just how powerful some of these technologies are. A small Node.js file converting the application into a true web application? Pretty cool.
+
 Key features:
 
 1. Secure login/signup over HTTPS
