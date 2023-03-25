@@ -22,7 +22,11 @@ Getting the file folders to be in the right place to deploy was an interesting p
 
 I am a big fan of Bootstrap.
 
+
 Simon Service Notes: I'm starting to grasp how everything is going to work together, although learning so many technologies at once makes the technicalities of how exactly to code everything a little difficult to fully understand. I'm getting there though. The other day the BYU website was having problems and displayed a huge JSON object and I was proud of myself for recognizing it as using a web service and trying to display the JSON object it was querying. I also learned just how powerful some of these technologies are. A small Node.js file converting the application into a true web application? Pretty cool.
+
+
+Simon DB Notes: I thought it was really interesting that the scores that were stored in the files from the class simon carried over to my startup simon. This DB directly applies to what I'm doing with setting and pulling reviews, I just have to figure out what the best way to insert the JSON objects is and pull them out only for their respective classes.
 
 Key features:
 
