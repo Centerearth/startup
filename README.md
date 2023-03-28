@@ -28,6 +28,10 @@ Simon Service Notes: I'm starting to grasp how everything is going to work toget
 
 Simon DB Notes: I thought it was really interesting that the scores that were stored in the files from the class simon carried over to my startup simon. This DB directly applies to what I'm doing with setting and pulling reviews, I just have to figure out what the best way to insert the JSON objects is and pull them out only for their respective classes.
 
+
+Simon Login notes: Being part of the Cybersecurity Association and having been hearing about the dangers of website logins for years now, I thought it would be way more difficult to create a secure login, but for simple stuff like this it turns out I learned I was quite wrong. 
+
+
 Key features:
 
 1. Secure login/signup over HTTPS
