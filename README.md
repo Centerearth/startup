@@ -19,6 +19,8 @@ Getting the file folders to be in the right place to deploy was an interesting p
 
 I am a big fan of Bootstrap.
 
+In JS if something breaks it just won't work, hence why setting up the debugger is so useful.
+
 Key features:
 
 1. Secure login/signup over HTTPS
@@ -64,7 +66,7 @@ margin- empty space between elements if you add it; default 0
 fr - only availabe in display: grid; means fraction of available space. 1fr means all of the available space. You can also combine them in rations so 1fr and 2fr would split the space into three parts and give 1 part to an element and 2 parts to another
 
 
-### Jan 27
+### Some Notes
 `curl` is basically a command line browser. `curl -v` lets you see all the communication between your device and whatever url you put in after curl -v. Do `curl -v http://URL
 - https is secure, http is not secure.
 - Layers
