@@ -11,6 +11,9 @@ http://3.17.19.135
 
 ./deployFiles.sh -k ~/Desktop/production.pem -h ratemyclass260.link -s startup
 
+For services:
+ ./deployService.sh -k ~/Desktop/production.pem -h ratemyclass260.link -s simon
+
 ssh -i ~/Desktop/production.pem ubuntu@3.17.19.135
 
 Gone is the stress you feel every time that you pick classes out for your next semester at BYU. RateMyClass is a RateMyProfessor spinoff that makes the process of choosing easy by giving you all the information you need to make informed decisions. Students who have taken a certain class can post reviews about the difficulty level of the class, professor and TA recommendations, helpful resources, things to watch out for, and really anything else. Students looking to take the class can find the class among a list of all current BYU classes and review the posts made by previous takers to make their BYU stay as smooth as possible.
@@ -20,6 +23,16 @@ Getting the file folders to be in the right place to deploy was an interesting p
 I am a big fan of Bootstrap.
 
 In JS if something breaks it just won't work, hence why setting up the debugger is so useful.
+
+
+Simon Service Notes: I'm starting to grasp how everything is going to work together, although learning so many technologies at once makes the technicalities of how exactly to code everything a little difficult to fully understand. I'm getting there though. The other day the BYU website was having problems and displayed a huge JSON object and I was proud of myself for recognizing it as using a web service and trying to display the JSON object it was querying. I also learned just how powerful some of these technologies are. A small Node.js file converting the application into a true web application? Pretty cool.
+
+
+Simon DB Notes: I thought it was really interesting that the scores that were stored in the files from the class simon carried over to my startup simon. This DB directly applies to what I'm doing with setting and pulling reviews, I just have to figure out what the best way to insert the JSON objects is and pull them out only for their respective classes.
+
+
+Simon Login notes: Being part of the Cybersecurity Association and having been hearing about the dangers of website logins for years now, I thought it would be way more difficult to create a secure login, but for simple stuff like this it turns out I learned I was quite wrong. 
+
 
 Key features:
 
@@ -66,7 +79,7 @@ margin- empty space between elements if you add it; default 0
 fr - only availabe in display: grid; means fraction of available space. 1fr means all of the available space. You can also combine them in rations so 1fr and 2fr would split the space into three parts and give 1 part to an element and 2 parts to another
 
 
-### Some Notes
+### Jan 27
 `curl` is basically a command line browser. `curl -v` lets you see all the communication between your device and whatever url you put in after curl -v. Do `curl -v http://URL
 - https is secure, http is not secure.
 - Layers
