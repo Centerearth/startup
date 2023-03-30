@@ -34,6 +34,9 @@ Simon DB Notes: I thought it was really interesting that the scores that were st
 Simon Login notes: Being part of the Cybersecurity Association and having been hearing about the dangers of website logins for years now, I thought it would be way more difficult to create a secure login, but for simple stuff like this it turns out I learned I was quite wrong. 
 
 
+Simon Websocket: thought it was super interesting to see some of the stuff I learned about networking in previous years applied here for the livetime websocket messages. Need to explore more.
+
+
 Key features:
 
 1. Secure login/signup over HTTPS
