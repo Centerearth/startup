@@ -9,12 +9,8 @@
   }
 
   if (authenticated) {
+    //fill in something to do here
     document.querySelector('#playerName').textContent = userName;
-    setDisplay('loginControls', 'none');
-    setDisplay('playControls', 'block');
-  } else {
-    setDisplay('loginControls', 'block');
-    setDisplay('playControls', 'none');
   }
 })();
 
@@ -28,10 +24,11 @@ async function createUser() {
 
 async function loginOrCreate(endpoint) {
   const userName = document.querySelector('#your_name')?.value;
+  const userEmail = document.querySelector('#email')?.value;
   const password = document.querySelector('#password')?.value;
   const response = await fetch(endpoint, {
     method: 'post',
-    body: JSON.stringify({ email: userName, password: password }),
+    body: JSON.stringify({ name: userName, email: userEmail, password: password }),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
@@ -40,7 +37,7 @@ async function loginOrCreate(endpoint) {
 
   if (response?.status === 200) {
     localStorage.setItem('userName', userName);
-    window.location.href = 'index.html';
+    window.location.href = 'review_maker.html';
   } else {
     const modalEl = document.querySelector('#msgModal');
     modalEl.querySelector('.modal-body').textContent = `⚠ Error: ${body.msg}`;
@@ -48,6 +45,7 @@ async function loginOrCreate(endpoint) {
     msgModal.show();
     document.getElementById("myForm").reset();
     window.location.reload()
+    //Figure out what this does
   }
 }
 
@@ -68,6 +66,8 @@ async function getUser(email) {
   return null;
 }
 
+
+//modify
 function setDisplay(controlId, display) {
   const playControlEl = document.querySelector(`#${controlId}`);
   if (playControlEl) {
