@@ -1,7 +1,7 @@
 async function loadReviews(classNum) {
   //need to update each html with proper parameter
   classNum = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
-  alert(classNum);
+  classNum = classNum.split('.')[0];
   let reviews = [];
   try {
     // Get the latest high scores from the service
@@ -17,14 +17,13 @@ async function loadReviews(classNum) {
       reviews = JSON.parse(reviewsText);
     }
   }
-
   displayReviews(reviews);
 }
 
 function displayReviews(reviews) {
   const tableBodyEl = document.querySelector('#reviewTable');
 
-  if (scores.length) {
+  if (reviews.length) {
     // Update the DOM with the scores
     for (const [i, review] of reviews.entries()) {
       const nameTdEl = document.createElement('td');
@@ -46,7 +45,7 @@ function displayReviews(reviews) {
       tableBodyEl.appendChild(rowEl);
     }
   } else {
-    tableBodyEl.innerHTML = '<tr><td colSpan=4>Be the first to review!/td></tr>';
+    tableBodyEl.innerHTML = '<tr><td colSpan=4>Be the first to review!</td></tr>';
   }
 }
 

@@ -1,25 +1,23 @@
-async function saveScore() {
-  const userName = this.getPlayerName();
+async function saveReview() {
+  const userName = getPlayerName();
   const letterGrade = document.querySelector('#gradeId')?.value;
   const classNum = document.querySelector('#classId')?.value;
   const reviewContent = document.querySelector('#reviewId')?.value;
   const date = new Date().toLocaleDateString();
   const newReview = { name: userName, grade: letterGrade, date: date, class:classNum, review:reviewContent};
 
-  try {
-    const response = await fetch(`/api/review/${classNum}`, {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(newReview),
-    });
+  const response = await fetch(`/api/review/${classNum}`, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(newReview),
+  });
 
-    // Store what the service gave us as the high scores
-    const reviews = await response.json();
-    localStorage.setItem('reviews', JSON.stringify(reviews));
-  } catch {
-    // If there was an error then just track scores locally
-    this.updateReviewsLocal(newReview);
-  }
+  // Store what the service gave us as the high scores
+  const reviews = await response.json();
+  localStorage.setItem('reviews', JSON.stringify(reviews));
+  alert("Hi");
+
+  window.location.href = `/`;
 }
 
 function getPlayerName() {

@@ -44,6 +44,10 @@
     <div class="col-lg-12 col-xl-11">
     <form id="reviewForm">
         <div class="form-group">
+          <label for="nameId">Leave Your Review Here</label>
+          <textarea class="form-control" id="nameId" rows="1"></textarea>
+        </div>
+        <div class="form-group">
           <label for="gradeId">Please Select Your Grade</label>
           <select class="form-control" id="gradeId">
             <option>A</option>
@@ -64,7 +68,7 @@
         <div class="form-group">
           <label for="classId">Please Select the Class</label>
           <select class="form-control" id="classId">
-            <option>CS 260 (this is the only one that works currently) </option>
+            <option>CS 260</option>
             <option>CS 111</option>
             <option>CS 110</option>
             <option>CS 180</option>
@@ -77,7 +81,7 @@
           <textarea class="form-control" id="reviewId" rows="4"></textarea>
         </div>
         <hr/>
-        <button type="button" class="btn btn-primary btn-block mb-4" onclick="post()">Submit</button>
+        <button type="button" class="btn btn-primary btn-block mb-4" onclick="saveReview()">Submit</button>
       </form>
     </div>
   </main>
