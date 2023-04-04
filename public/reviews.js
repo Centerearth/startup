@@ -5,13 +5,18 @@ async function loadReviews(classNum) {
   let reviews = [];
   try {
     // Get the latest high scores from the service
-    const response = await fetch(`/api/scores/${classNum}`);
+    const response = await fetch(`/api/review/${classNum}`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+    });
+    //const response = await fetch(`/api/scores/${classNum}`);
     reviews = await response.json();
 
     // Save the scores in case we go offline in the future
     localStorage.setItem('reviews', JSON.stringify(reviews));
-  } catch {
+  } catch (error) {
     // If there was an error then just use the last saved scores
+    console.log(error);
     const reviewsText = localStorage.getItem('reviews');
     if (reviewsText) {
       reviews = JSON.parse(reviewsText);

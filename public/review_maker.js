@@ -5,18 +5,16 @@ async function saveReview() {
   const reviewContent = document.querySelector('#reviewId')?.value;
   const date = new Date().toLocaleDateString();
   const newReview = { name: userName, grade: letterGrade, date: date, class:classNum, review:reviewContent};
-  console.log(classNum);
   const response = await fetch(`/api/review/${classNum}`, {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify(newReview),
   });
-  console.log("HI)");
   const reviews = await response.json();
-  console.log(reviews);
+  //console.log(reviews);
   localStorage.setItem('reviews', JSON.stringify(reviews));
 
-  window.location.href = `/`;
+  window.location.href = `/${classNum}.html`;
 }
 
 
