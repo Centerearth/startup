@@ -1,18 +1,3 @@
-(async () => {
-  let authenticated = false;
-  const userName = localStorage.getItem('userName');
-  if (userName) {
-    const nameEl = document.querySelector('#userName');
-    nameEl.value = userName;
-    const user = await getUser(nameEl.value);
-    authenticated = user?.authenticated;
-  }
-
-  if (authenticated) {
-    //fill in something to do here
-  }
-})();
-
 async function loginUser() {
   loginOrCreate(`/api/auth/login`);
 }
@@ -38,13 +23,13 @@ async function loginOrCreate(endpoint) {
     localStorage.setItem('userName', userName);
     window.location.href = 'review_maker.html';
   } else {
+    //not exactly sure what this does but it never hits this part
     const modalEl = document.querySelector('#msgModal');
     modalEl.querySelector('.modal-body').textContent = `⚠ Error: ${body.msg}`;
     const msgModal = new bootstrap.Modal(modalEl, {});
     msgModal.show();
     document.getElementById("myForm").reset();
     window.location.reload()
-    //Figure out what this does
   }
 }
 
