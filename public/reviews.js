@@ -50,7 +50,7 @@ function displayReviews(reviews) {
       tableBodyEl.appendChild(rowEl);
     }
   } else {
-    tableBodyEl.innerHTML = '<tr><td colSpan=4>Be the first to review!</td></tr>';
+    tableBodyEl.innerHTML = '<tr><td colSpan=4>Please login to read and post reviews!</td></tr>';
   }
 }
 
