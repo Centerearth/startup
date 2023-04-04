@@ -34,7 +34,7 @@ function displayReviews(reviews) {
       nameTdEl.textContent = review.name;
       gradeTdEl.textContent = review.grade;
       dateTdEl.textContent = review.date;
-      reviewTdEl.textContent = review.name;
+      reviewTdEl.textContent = review.review;
 
       const rowEl = document.createElement('tr');
       rowEl.appendChild(nameTdEl);
