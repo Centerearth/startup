@@ -94,7 +94,8 @@ secureApiRouter.get('/review/:class', async (req, res) => {
 secureApiRouter.post('/review/:class', async (req, res) => {
   await DB.addReview(req.body);
   const classUsed = req.params.class;
-  const reviews = await DB.getReviews(classUsed);
+  console.log(classUsed);
+  const reviews = await DB.getReview(classUsed);
   res.send(reviews);
 });
 

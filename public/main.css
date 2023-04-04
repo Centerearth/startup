@@ -98,3 +98,10 @@ footer a {
     display: none;
   }
 }
+
+td {
+  max-width: 40vw;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
