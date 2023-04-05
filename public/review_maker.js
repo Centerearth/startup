@@ -13,12 +13,43 @@ async function saveReview() {
   const reviews = await response.json();
   //console.log(reviews);
   localStorage.setItem('reviews', JSON.stringify(reviews));
-
-  window.location.href = `/${classNum}.html`;
+  broadcastEvent(classNum, {});
+  //window.location.href = `/review_maker.html`;
+  //window.location.href = `/${classNum}.html`;
 }
+function configureWebSocket() {
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    socket.onopen = (event) => {
+      displayMsg('system', 'Websocket', 'connected');
+    };
+    socket.onclose = (event) => {
+      displayMsg('system', 'Websocket', 'disconnected');
+    };
+    socket.onmessage = async (event) => {
+      const msg = JSON.parse(event);
+      displayMsg('player', msg.from, ` has had a new review posted!`);
+    };
+  }
 
+function displayMsg(cls, from, msg) {
+    const chatText = document.querySelector('#player-messages');
+    chatText.innerHTML =
+      `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
+  }
 
+function broadcastEvent(from, value) {
+    const event = {
+      from: from,
+      value: value,
+    };
+    socket.send(JSON.stringify(event));
+    temp = JSON.stringify(event);
+    const msg = JSON.parse(temp);
+    displayMsg('player', msg.from.toUpperCase(), ` has had a new review posted!`);
+  }
 
+configureWebSocket();
 
 
 
