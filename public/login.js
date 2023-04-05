@@ -21,7 +21,8 @@ async function loginOrCreate(endpoint) {
 
   if (response?.status === 200) {
     localStorage.setItem('userName', userName);
-    window.location.href = 'review_maker.html';
+    //window.location.href = 'review_maker.html';
+    window.location.href = '/login.html'
   } else {
     //not exactly sure what this does but it never hits this part
     const modalEl = document.querySelector('#msgModal');
@@ -36,7 +37,7 @@ async function loginOrCreate(endpoint) {
 function logout() {
   fetch(`/api/auth/logout`, {
     method: 'delete',
-  }).then(() => (window.location.href = '/'));
+  }).then(() => (window.location.href = '/login.html'));
 }
 
 async function getUser(email) {
