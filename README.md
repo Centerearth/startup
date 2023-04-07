@@ -28,6 +28,11 @@ In JS if something breaks it just won't work, hence why setting up the debugger 
 Startup Service Notes: This was quite the project! I really had to get in the weeds to make everything work, but I definitely feel like I gained a much deeper understanding of how everything works together. I also really liked playing with MongoDB stuff, I installed the shell to be able directly interact with the database and see what was happening and was able to modify my queries better to get only what I wanted. It took awhile for me to understand what websockets were doing, and then it dawned on me that websockets allowed not only live communication with the server, but live connection with all others through the server. Node.js was cool, but I liked NPM and its ability to pull any library even better. Reminds me of pip. I thought the encryption on the password stuff was really cool as well.
 
 
+
+Simon React: Simon react was a fun assignment! I still think its so cool how React pulls everything together into a single page application and has the ability to work with both HTML and JS at the same time. Super powerful.
+
+
+
 Simon Service Notes: I'm starting to grasp how everything is going to work together, although learning so many technologies at once makes the technicalities of how exactly to code everything a little difficult to fully understand. I'm getting there though. The other day the BYU website was having problems and displayed a huge JSON object and I was proud of myself for recognizing it as using a web service and trying to display the JSON object it was querying. I also learned just how powerful some of these technologies are. A small Node.js file converting the application into a true web application? Pretty cool.
 
 
