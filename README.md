@@ -1134,3 +1134,431 @@ That being said, many of the methods that work on arrays can also be used on Nod
 
 
 Simon Javascript was fun! I learned about localstorage and setting localstorage which was cool.
+
+ ## Test Review
+padding puts space around content of selected elements
+pals before marriage (padd, border, margin);
+CNAME points DNS to another DNS
+A points to IP address
+JSON must have "" around the key and value must never be undefined.
+a.filter() -
+The filter() function in JavaScript is used to create a new array with all elements that pass a certain test implemented by the provided callback function.
+
+The filter() method creates a new array by filtering out the elements that do not pass the specified condition(s). It takes a callback function as its argument, which is executed for each element of the array. The callback function takes three arguments:
+
+currentValue (required) - the value of the current element being processed
+index (optional) - the index of the current element being processed
+array (optional) - the array object that the filter() method was called upon
+The callback function should return a boolean value. If the function returns true, the current element will be added to the new array. If the function returns false, the current element will be skipped.
+
+v.match() - takes a regular expression and chooses values in the array that match
+The match() function in JavaScript is used to search for a specified pattern in a string and returns the matched string or an array of matched strings.
+
+The match() method takes one argument, which is the regular expression pattern to search for. The pattern can be a string or a regular expression object. The method returns an array containing the matched string or an empty array if no match is found.
+
+a.reduce() - takes an array and reduces it to one value
+The reduce() method takes two arguments: a callback function and an initial value for the accumulator. The callback function takes four arguments: the accumulator, the current element, the current index, and the array itself. The function returns the updated value of the accumulator after processing the current element.
+WHEN THE FUNCTION IS JUST TWO PARAMETERS IT IS THE ACCUMULATOR AND THE CURRENT ELEMENT;
+
+/A|f/i A or f case insensitive
+
+CSS font loading from google @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@700&display=swap');
+.map() - takes array and makes it an array of stuff with different values;
+when javascript console.logs an array, it puts '' around strings.
+subdomain is the whole thing cs260.cs.byu.edu
+for arrow functions {++y} is undefined but ++y returns an incremented y value. If it's one line you do not need a return value.
+Javascript objects do not need quotes around the strings in the keys.
+chmod +x deploy.sh - 
+chmod takes options and a mode modifier and then a file to be granted access
+chmod [options] mode filename;
+common option values;
+
+-R: Recursively change the permissions of all files and directories within the specified directory.
+-v: Print a message for each file or directory that is modified.
+-c: Print a message only for files or directories whose permissions are actually changed.
+
+Some common values for the mode argument include:
+
+u: Sets the permissions for the file owner.
+g: Sets the permissions for the group owner.
+o: Sets the permissions for everyone else.
+r: Gives read permission.
+w: Gives write permission.
+x: Gives execute permission.
+
+
+sudo deploy.sh //doesn't make any sense
+ls -la deploy.sh
+ssh deploy.sh //doesn't make any sense
+ ## URL
+ The Uniform Resource Locator (URL) represents the location of a web resource. A web resource can be anything, such as a web page, font, image, video stream, database record, or JSON object. It can also be completely ephemeral, such as a visitation counter, or gaming session.
+
+Looking at the different parts of a URL is a good way to understand what it represents. Here is an example URL that represents the summary of accepted CS 260 BYU students that is accessible using secure HTTP.
+
+https://byu.edu:443/cs/260/student?filter=accepted#summary
+The URL syntax uses the following convention. Notice the delimiting punctuation between the parts of the URL. Most parts of the URL are optional. The only ones that are required are the scheme, and the domain name.
+
+<scheme>://<domain name>:<port>/<path>?<parameters>#<anchor>
+
+Part	Example	Meaning
+Scheme	https	The protocol required to ask for the resource. For web applications, this is usually HTTPS. But it could be any internet protocol such as FTP or MAILTO.
+Domain name	byu.edu	The domain name that owns the resource represented by the URL.
+Port	3000	The port specifies the numbered network port used to connect to the domain server. Lower number ports are reserved for common internet protocols, higher number ports can be used for any purpose. The default port is 80 if the scheme is HTTP, or 443 if the scheme is HTTPS.
+Path	/school/byu/user/8014	The path to the resource on the domain. The resource does not have to physically be located on the file system with this path. It can be a logical path representing endpoint parameters, a database table, or an object schema.
+Parameters	filter=names&highlight=intro,summary	The parameters represent a list of key value pairs. Usually it provides additional qualifiers on the resource represented by the path. This might be a filter on the returned resource or how to highlight the resource. The parameters are also sometimes called the query string.
+Anchor	summary	The anchor usually represents an sub-location in the resource. For HTML pages this represents a request for the browser to automatically scroll to the element with an ID that matches the anchor. The anchor is also sometimes called the hash, or fragment ID.
+Technically you can also provide a user name and password before the domain name. This was used historically to authenticate access, but for security reasons this is deprecated. However, you will still see this convention for URLs that represent database connection strings.
+
+URL, URN, and URI
+You will sometimes hear the use of URN or URI when talking about web resources. A Uniform Resource Name (URN) is a unique resource name that does not specify location information. For example, a book URN might be urn:isbn:10,0765350386. A Uniform Resource Identifier (URI) is a general resource identifier that could refer to either a URL and URN. With web programming you are almost always talking about URLs and therefore you should not use the more general URI.
+
+## Ports
+Only use one port per service! Caddy redirects requests from port 80 to port 443.
+Here is a list of common port numbers that you might come across.
+
+Port	Protocol
+20	File Transfer Protocol (FTP) for data transfer
+22	Secure Shell (SSH) for connecting to remote devices
+25	Simple Mail Transfer Protocol (SMTP) for sending email
+53	Domain Name System (DNS) for looking up IP addresses
+80	Hypertext Transfer Protocol (HTTP) for web requests
+110	Post Office Protocol (POP3) for retrieving email
+123	Network Time Protocol (NTP) for managing time
+161	Simple Network Management Protocol (SNMP) for managing network devices such as routers or printers
+194	Internet Relay Chat (IRC) for chatting
+443	HTTP Secure (HTTPS) for secure web requests
+## HTTP 
+HTTP is how the web talks. When a web browser makes a request to a web server it does it using the HTTP protocol. In previous instruction we discussed how to use HTTP. Now, we will talk about the internals of HTTP. Just like becoming fluent in a foreign language make a visit to another country more enjoyable, understanding how to speak HTTP helps you communicate effectively when talking on the web.
+
+When a web client (e.g. a web browser) and a web server talk they exchange HTTP requests and responses. The browser will make an HTTP request and the server will generate an HTTP response. You can see the HTTP exchange by using the browser's debugger or by using a console tool like Curl. For example, in your console you can use curl to make the following request.
+
+curl -v -s http://info.cern.ch/hypertext/WWW/Helping.html
+Request
+The HTTP request for the above command would look like the following.
+
+GET /hypertext/WWW/Helping.html HTTP/1.1
+Host: info.cern.ch
+Accept: text/html
+An HTTP request has this general syntax.
+
+<verb> <url path, parameters, anchor> <version>
+[<header key: value>]*
+[
+
+  <body>
+]
+The first line of the HTTP request contains the verb of the request, followed by the path, parameters, and anchor of the URL, and finally the version of HTTP being used. The following lines are optional headers that are defined by key value pairs. After the headers you have an optional body. The body start is delimited from the headers with two new lines.
+
+In the above example, we are asking to GET a resource found at the path /hypertext/WWW/Helping.html. The version used by the request is HTTP/1.1. This is followed by two headers. The first specifies the requested host (i.e. domain name). The second specifies what type of resources the client will accept. The resource type is always a MIME type as defined by internet governing body IANA. In this case we are asking for HTML.
+
+Response
+The response to the above request looks like this.
+
+HTTP/1.1 200 OK
+Date: Tue, 06 Dec 2022 21:54:42 GMT
+Server: Apache
+Last-Modified: Thu, 29 Oct 1992 11:15:20 GMT
+ETag: "5f0-28f29422b8200"
+Accept-Ranges: bytes
+Content-Length: 1520
+Connection: close
+Content-Type: text/html
+
+<TITLE>Helping -- /WWW</TITLE>
+<NEXTID 7>
+<H1>How can I help?</H1>There are lots of ways you can help if you are interested in seeing
+the <A NAME=4 HREF=TheProject.html>web</A> grow and be even more useful...
+An HTTP response has the following syntax.
+
+<version> <status code> <status string>
+[<header key: value>]*
+[
+
+  <body>
+]
+You can see that the response syntax is similar to the request syntax. The major difference is that the first line represents the version and the status of the response.
+
+Understanding the meaning of the common HTTP verbs, status codes, and headers is important for you to understand, as you will use them in developing a web application. Take some time to internalize the following common values.
+
+Verbs
+There are several verbs that describe what the HTTP request is asking for. The list below only describes the most common ones.
+
+Verb	Meaning
+GET	Get the requested resource. This can represent a request to get a single resource or a resource representing a list of resources.
+POST	Create a new resource. The body of the request contains the resource. The response should include a unique ID of the newly created resource.
+PUT	Update a resource. Either the URL path, HTTP header, or body must contain the unique ID of the resource being updated. The body of the request should contain the updated resource. The body of the response may contain the resulting updated resource.
+DELETE	Delete a resource. Either the URL path or HTTP header must contain the unique ID of the resource to delete.
+OPTIONS	Get metadata about a resource. Usually only HTTP headers are returned. The resource itself is not returned.
+Status codes
+It is important that you use the standard HTTP status codes in your HTTP responses so that the client of a request can know how to interpret the response. The codes are partitioned into five blocks.
+
+1xx - Informational.
+2xx - Success.
+3xx - Redirect to some other location, or that the previously cached resource is still valid.
+4xx - Client errors. The request is invalid.
+5xx - Server errors. The request cannot be satisfied due to an error on the server.
+Within those ranges here are some of the more common codes. See the MDN documentation for a full description of status codes.
+
+Code	Text	Meaning
+100	Continue	The service is working on the request
+200	Success	The requested resource was found and returned as appropriate.
+201	Created	The request was successful and a new resource was created.
+204	No Content	The request was successful but no resource is returned.
+304	Not Modified	The cached version of the resource is still valid.
+307	Permanent redirect	The resource is no longer at the requested location. The new location is specified in the response location header.
+308	Temporary redirect	The resource is temporarily located at a different location. The temporary location is specified in the response location header.
+400	Bad request	The request was malformed or invalid.
+401	Unauthorized	The request did not provide a valid authentication token.
+403	Forbidden	The provided authentication token is not authorized for the resource.
+404	Not found	An unknown resource was requested.
+408	Request timeout	The request takes too long.
+409	Conflict	The provided resource represents an out of date version of the resource.
+418	I'm a teapot	The service refuses to brew coffee in a teapot.
+429	Too many requests	The client is making too many requests in too short of a time period.
+500	Internal server error	The server failed to properly process the request.
+503	Service unavailable	The server is temporarily down. The client should try again with an exponential back off.
+Headers
+
+HTTP headers specify metadata about a request or response. This includes things like how to handle security, caching, data formats, and cookies. Some common headers that you will use include the following.
+
+Header	Example	Meaning
+Authorization	Bearer bGciOiJIUzI1NiIsI	A token that authorized the user making the request.
+Accept	image/*	What content format the client accepts. This may include wildcards.
+Content-Type	text/html; charset=utf-8	The format of the response content. These are described using standard MIME types.
+Cookie	SessionID=39s8cgj34; csrftoken=9dck2	Key value pairs that are generated by the server and stored on the client.
+Host	info.cern.ch	The domain name of the server. This is required in all requests.
+Origin	cs260.click	Identifies the origin that caused the request. A host may only allow requests from specific origins.
+Access-Control-Allow-Origin	https://cs260.click	Server response of what origins can make a request. This may include a wildcard.
+Content-Length	368	The number of bytes contained in the response.
+Cache-Control	public, max-age=604800	Tells the client how it can cache the response.
+User-Agent	Mozilla/5.0 (Macintosh)	The client application making the request.
+Body
+The format of the body of an HTTP request or response is defined by the Content-Type header. For example, it may be HTML text (text/html), a binary image format (image/png), JSON (application/json), or JavaScript (text/javascript). A client may specify what formats it accepts using the accept header.
+
+Cookies
+
+HTTP itself is stateless. This means that one HTTP request does not know anything about a previous or future request. However, that does not mean that a server or client cannot track state across requests. One common method for tracking state is the cookie. Cookies are generated by a server and passed to the client as an HTTP header.
+
+HTTP/2 200
+Set-Cookie: myAppCookie=tasty; SameSite=Strict; Secure; HttpOnly
+The client then caches the cookie and returns it as an HTTP header back to the server on subsequent requests.
+
+HTTP/2 200
+Cookie: myAppCookie=tasty
+This allows the server to remember things like the language preference of the user, or the user's authentication credentials. A server can also use cookies to track, and share, everything that a user does. However, there is nothing inherently evil about cookies, the problem comes from web applications that use them as a means to violate a user's privacy or inappropriately monetize their data.
+
+HTTP Versions
+HTTP continually evolves in order to increase performance and support new types of applications. You can read about the evolution of HTTP on MDN.
+
+Year	Version	Features
+1990	HTTP0.9	one line, no versions, only get
+1996	HTTP1	get/post, header, status codes, content-type
+1997	HTTP1.1	put/patch/delete/options, persistent connection
+2015	HTTP2	multiplex, server push, binary representation
+2022	HTTP3	QUIC for transport protocol, always encrypted
+## ADD SOP and CORS info
+## Fetch examples
+The ability to make HTTP requests from JavaScript is one of the main technologies that changed the web from static content pages (Web 1.0) to one of web applications (Web 2.0) that fully interact with the user. Microsoft introduced the first API for making HTTP requests from JavaScript with the XMLHttpRequest API.
+
+Today, the fetch API is the preferred way to make HTTP requests. The fetch function is built into the browser's JavaScript runtime. This means you can call it from JavaScript code running in a browser.
+
+The basic usage of fetch takes a URL and returns a promise. The promise then function takes a callback function that is asynchronously called when the requested URL content is obtained. If the returned content is of type application/json you can use the json function on the response object to convert it to a JavaScript object.
+
+The following example makes a fetch request to get and display an inspirational quote.
+
+fetch('https://api.quotable.io/random')
+  .then((response) => response.json())
+  .then((jsonResponse) => {
+    console.log(jsonResponse);
+  });
+Response
+
+{
+  content: 'Never put off till tomorrow what you can do today.',
+  author: 'Thomas Jefferson',
+};
+To do a POST request you populate the options parameter with the HTTP method and headers.
+
+fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  body: JSON.stringify({
+    title: 'test title',
+    body: 'test body',
+    userId: 1,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((jsonResponse) => {
+    console.log(jsonResponse);
+  });
+  ## RPC, REST, and GraphQL
+  Who knows.
+  ## Node.js
+  Lets you deploy javascript outside of the browser
+  Ctr + C to exit the thing
+  ➜  node -e "console.log(1+1)" //run js directly from console
+  ➜  node main.js  //run the program from your console
+  STEPS TO START YOUR DIRECTORY
+  Create your project directory
+  Initialize it for use with NPM by running npm init -y
+  Make sure .gitignore file contains node-modules
+  Install any desired packages with npm install <package name here>
+  Add require('<package name here>') to your JavaScript code
+  Run your code with node main.js
+  ## Express
+  For example, if the client makes a GET request to http://localhost:8080/api/users?id=123, then req.originalUrl would be set to /api/users?id=123.
+
+req.originalUrl includes the entire URL path, including any query parameters, but does not include the hostname or protocol.
+## Express
+a node package
+Express provides support for:
+
+Routing requests for service endpoints
+Manipulating HTTP requests with JSON body content
+Generating HTTP responses
+Using middleware to add functionality
+## PM2 - Process Manager 2
+to keep programs running after a shutdown or closing the console, you need to register them as a daemon.
+use pm2 commands after ssh into your server
+Command	Purpose
+pm2 ls	List all of the hosted node processes
+pm2 monit	Visual monitor
+pm2 start index.js -n simon	Add a new process with an explicit name
+pm2 start index.js -n startup -- 4000	Add a new process with an explicit name and port parameter
+pm2 stop simon	Stop a process
+pm2 restart simon	Restart a process
+pm2 delete simon	Delete a process from being hosted
+pm2 delete all	Delete all processes
+pm2 save	Save the current processes across reboot
+pm2 restart all	Reload all of the processes
+pm2 restart simon-react --update-env	Reload process and update the node version to the current environment definition
+pm2 update	Reload pm2
+pm2 start env.js --watch --ignore-watch="node_modules"	Automatically reload service when index.js changes
+pm2 describe simon	Describe detailed process information
+pm2 startup	Displays the command to run to keep PM2 running after a reboot.
+pm2 logs simon	Display process logs
+## Jest
+➜ npm run test //to run the tests in your program
+Supertest and endpoints
+To test our endpoints we need another package so that we can make HTTP requests without having to actually send them over the network. This is done with the NPM package called supertest
+## Packages to Install
+➜  mkdir npmtest
+➜  cd npmtest
+➜  npm init -y   //configures directory to work with node.js
+➜  npm install give-me-a-joke  //install a package
+➜ npm install http //installs http package which contains the functionality for listening on server ports and manipulating HTTP requests.
+➜ npm install express //install express package
+➜ npm install cookie-parser //cookie parser simplifies the generation and access of cookies.
+➜ npm install -g nodemon //I already did this and you only need to do it once. nodemod is a wrapper around node that watches for files in the project directory to change. When it detects that you saved something it will automatically restart node.
+➜ node index.js 5000 //starts the javascript and listens on port 5000
+➜ npm install jest -D //installs jest as a developer file so it doesn't get released with production. Jest uses test driven development to make sure your program is returning the proper results. 
+➜ npm install supertest -D //supertest lets you do stuff
+## Data Services
+Mongo;
+Allows me to store data persistently across computers and sessions for one user.
+I need to have connection in my server.js file to my database.js file via DB. and via requiring the file in the server.js file.
+## Authentication
+Authorization services often use standard protocols for authenticating and authorizing. These include standards such as OAuth, SAML, and OIDC. Additionally, they usually support concepts like Single Sign On (SSO) and Federated Login. Single sign on allows a user to use the same credentials for multiple web applications. For example, you can login into GitHub using your Google credentials. Federated login allows a user to login once and then the authentication token reused to automatically log the user into multiple websites. For example, logging into Gmail allows you to also use Google Docs and YouTube without logging in again.
+## Class Websockets
+webSockets piggy backs off of http.
+http only allows the client to request the server and the server can only respond. Websockets turns both client and server to a peer and the peers can actively pass info to each other.
+Upgrade: websocket
+Connection: Upgrade
+At any point, either of the peers can close the connection.
+The live server connection on vscode is actually an example of websockets when you update the code and it updates in the browser.
+
+## Web Frameworks
+Vue combines HTML, CSS, and JavaScript into a single file. HTML is represented by a template element that can be aggregated into other templates.
+Svelte combines HTML, CSS, and JavaScript into a single file. The difference here is that Svelte requires a transpiler to generate browser ready code, instead of a runtime virtual DOM like Vue.
+React combines JavaScript and HTML into its component format. CSS must be declared outside of the JSX file. The component itself highly leverages the functionality of JavaScript and can be represented as a function or class.
+An Angular component defines what JavaScript, HTML, and CSS are combined together. This keeps a fairly strong separation of files what are usually grouped together in a directory rather than using the single file representation.
+## Frameworks Class
+useEffect- used for lifecycle events that don't directly impact the DOM
+useSate- used to change DOM ig
+const [state variable, update state function] = React.useState(initial state);
+To make React aware that the variable was updated you need to use the function you associated with it or it will not automatically update the DOM.
+The funcitona associated with the state will only just take a new value and update the DOM. That's all.
+function UseEffectHookDemo(){
+  React.useEffect(() => {
+    console.log('rendered');
+  });
+}
+[] as a second parfameter of Reac.useEffect says only call the first parameter the first time
+That example generally is not what the useEffect is used for.
+You may only use these in function components
+You may only put them at the top of the function scope
+You may not have loops and conditionals with them
+## React
+uses className instead of class when defining CSS selectors
+when you make html components they must start with a capital letter
+when writing in html {} are the escape from JSX
+state is a way that components remember things
+when you call a set function to update a state, React automatically updates child components too
+To collect data from multiple children, or to have two child components communicate with each other, declare the shared state in their parent component instead. The parent component can pass that state back down to the children via props. This keeps the child components in sync with each other and with their parent.
+## Frameworks Class 2
+npx create-react-app test-react
+cd test-react && npm start
+Toolchains: Babel->Minimy (compresses)->Dev Http server  *this is for npm start
+babel->minify-> /public/index.html *this is for npm run build
+## React CLI (command line interface)
+Now that we have covered the basics of React, we want to extend our usage to include a full web framework toolchain that allows us to use JSX, minification, polyfills, and bundling for our Simon and start up applications. One common way for configuring your project to take advantage of these technologies is to use a Command Line Interface (CLI) to initially set up a React based project.
+
+A CLI is a program that runs from the console and usually provides an assortment of commands related to some specific purpose. For example, the AWS CLI allows you to interact with all of its services. This saves you the time of having to bring up the AWS website interface when you want to use an AWS service. Instead of opening a browser, logging in, navigating to a service, and walking through a bunch of UI dialogs, you simply open your console window and use the AWS CLI to execute a single command.
+
+To set up our React toolchain we will use the create-react-app CLI. This CLI will create and configure a template React application that you can use as a starting place for your application. create-react-app is an NPM package that works as a console program. Previously you used npm packages to add code libraries to your applications, but you can also run NPM packages as if they were a console program, if they are configured to do so.
+
+The common way to run CLI NPM programs is to use the NPX program that was included when you installed NPM. NPX will temporarily download the desired package from NPM and then execute it using Node. Basically, NPX is just a short cut for NPM install and NPM start. It also has the advantage of not actually persistently installing the package and so it doesn't leave any clutter behind in your development environment.
+
+When you run create-react-app with NPX, it creates a brand new React application project based on a standard template. You can see how this works by running the following from your console window. Make sure you are in a directory where you keep your coding projects. For example, cd ~/src/byu/cs260.
+
+Success! Created test-react at C:\Users\alexw\byu\cs260\test-react
+Inside that directory, you can run several commands:
+
+  npm start
+    Starts the development server.
+
+  npm run build
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+We suggest that you begin by typing:
+
+  cd test-react
+  npm start
+
+Happy hacking!
+
+### Create React App
+At a high level create-react-app did the following:
+
+Updated ./package-json to include the necessary NPM packages for running and testing a React application.
+Created ./public/index.html as the entry point for the browser to load your application
+Created ./src/index.js to initialize the React application
+Created ./src/app.js to provide the top level React component
+All the other files provide styling, use on mobile devices, testing, and performance monitoring.
+### Modifying the React Application
+There is nothing that create-react-app does that you should consider off limits for change or improvement. If you take the time to understand what it is doing and why, then you should feel free to customize the application to how you would like it to work. At a basic level you should always do the following:
+
+Replace the icon files with your own icons
+Modify the manifest.json and package.json to contain your application name
+Modify the README.md to describe your application
+Modify index.html to contain a proper title and description metadata.
+### JSX vs JS
+The create-react-app CLI uses the .js (JavaScript) extension for JSX files instead of .jsx. The Babel transpiler will work with either one, but some editor tools will work differently based upon the extension. For this reason, you might consider renaming the .js files that actually contain JSX to use .jsx instead. The developers at AirBNB had an interesting conversation on this topic that you might browse if you would like to consider the differing opinions on this subject.
+### Building a production release
+Now that you have your React application the way that you like you need to build a production ready release. You do this by running npm run build. The executes the build script found in your package.json. The build script transpiles, minifies, and injects the proper JavaScript, and then outputs everything to a deployment ready version contained in a subdirectory named build.
+
+➜  npm run build
+
+Creating an optimized production build...
+Compiled successfully.
+The deployment scripts for Simon React creates a distribution package by calling npm run build and then copying the build directory out to your production server.
